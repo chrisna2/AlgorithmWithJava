@@ -37,10 +37,151 @@ ComputeCumulativeSum.java 참조
 ## 재귀 알고리즘의 효율성
 ```java 
 ComputeFactorial.java 참조
+BianarySearch.java 참조
 ```
 
 
+### part2 공부하면서 배운 소소한 java 팁
+### 1. java ArrayList배열 sort 방법 (JDK 1.8 이후)
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator; 
 
+public class SortArrayList {    
+  
+  public static void main(String[] args) {         
+    // ArrayList 준비        
+    ArrayList<String> list = new ArrayList<>(Arrays.asList("C", "A", "B", "a"));
+    System.out.println("원본 : " + list);  // [C, A, B, a]         
+    // 오름차순으로 정렬        
+    list.sort(Comparator.naturalOrder());        
+    System.out.println("오름차순 : " + list);  // [A, B, C, a]         
+    // 내림차순으로 정렬        
+    list.sort(Comparator.reverseOrder());        
+    System.out.println("내림차순 : " + list); // [a, C, B, A]                
+    // 대소문자 구분없이 오름차순 정렬        
+    list.sort(String.CASE_INSENSITIVE_ORDER);        
+    System.out.println("대소문자 구분없이 오름차순 : " + list);// [a, A, B, C]                
+    // 대소문자 구분없이 내림차순 정렬        
+    list.sort(Collections.reverseOrder(String.CASE_INSENSITIVE_ORDER));        
+    System.out.println("대소문자 구분없이 내림차순 : " + list); // [C, B, a, A]    
+  }}
+```
+
+> 값이 측정 가능 한 int double 같은 경우 Comparator 클래스 안에서 정리
+```java    
+    public static void main(String[] args) {
+        ArrayList<Integer> testBed = new ArrayList<>();
+
+        for(int i=0;i<100; i++){
+            testBed.add((int)((Math.random()*(1000-1+1))+1));            
+        }
+        //해당 ArrayList 배열 정렬 방법
+        testBed.sort(Comparator.naturalOrder());
+    }
+```
+> 정렬의 기준도 Comparable 을 통해 정렬 기준 설정 가능
+```java
+public class SortArrayList {    
+  public static void main(String[] args) {         
+    // ArrayList 준비        
+    ArrayList<Product> list = new ArrayList<>();        
+    list.add(new Product("Galaxy", 2000));        
+    list.add(new Product("Apple", 3000));        
+    list.add(new Product("Shaomi", 1000));       
+    System.out.println("원본 : " + list); 
+    // price순 오름차순으로 정렬        
+    Collections.sort(list);        
+    System.out.println("오름차순 : " + list);     
+    // price순 내림차순으로 정렬        
+    Collections.sort(list, Collections.reverseOrder());        
+    System.out.println("내림차순 : " + list);    
+    }
+}
+
+class Product implements Comparable<Product> {
+      
+      private String name;    
+      private int price;     
+      
+      //VO 개념
+      public Product(String name, int price) {        
+        this.name = name;        
+        this.price = price;    
+      }     
+      
+      @Override    
+      public int compareTo(Product product) {        
+        if (product.price < price) {            
+          return 1;    // 가격 기준으로 상품의 가격 기준
+        } 
+        else if (product.price > price) {            
+          return -1;   // 가격 역순 상품의 정렬
+        }       
+        return 0;    
+      }    
+      
+      @Override    
+      public String toString() {        
+        return "[ " + this.name + ": " + this.price + " ]";    
+      }
+  }
+```
+
+> 정렬의 기준도 Comparator 을 통해 custom한 정령 기준 부여 가능
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator; 
+public class SortArrayList {   
+   public static void main(String[] args) {         
+      // ArrayList 준비        
+      ArrayList<Product> list = new ArrayList<>();        
+      list.add(new Product("Galaxy", 2000));        
+      list.add(new Product("Apple", 3000));        
+      list.add(new Product("Shaomi", 1000));        
+      System.out.println("원본 : " + list); 
+      // price순 오름차순으로 정렬        
+      Collections.sort(list, new ProductPriceComparator());        
+      System.out.println("price 순 오름차순 : " + list); 
+      // price순 내림차순으로 정렬        
+      Collections.sort(list, new ProductPriceComparator().reversed());        
+      System.out.println("price 순 내림차순 : " + list); 
+      // name순 오름차순으로 정렬        
+      Collections.sort(list, new ProductNameComparator());        
+      System.out.println("price 순 오름차순 : " + list); 
+      // name순 내림차순으로 정렬        
+      Collections.sort(list, new ProductNameComparator().reversed());        
+      System.out.println("price 순 내림차순 : " + list);
+    }
+
+    //가격 순 정렬
+    private static class ProductPriceComparator implements Comparator<Product>{
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            if(o1.price > o2.price){
+                return 1;
+            }
+            else if(o1.price < o2.price){
+                return -1;
+            }
+            return 0;
+        }
+    }
+
+    //이름 순 정렬
+    private static class ProductNameComparator implements Comparator<Product>{
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.name.compareTo(o2.name);
+        }
+    }
+    //Product는 생략...
+}
+```
 ### ※ 알고리즘 공부의 방향성 찾기
  1. 다음 부터는 공부 할때 항상 노트랑 팬을 들고 공부를 하자.
  2. 10분 고민 뒤 바로 생각안나면 찾아보자 (나는 쌓여 있는게 없다. 시간도 부족하다.)
