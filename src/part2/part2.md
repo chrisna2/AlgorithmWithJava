@@ -41,8 +41,9 @@ BianarySearch.java 참조
 ```
 
 
-### part2 공부하면서 배운 소소한 java 팁
+## part2 공부하면서 배운 소소한 java 팁
 ### 1. java ArrayList배열 sort 방법 (JDK 1.8 이후)
+- 출처: https://hianna.tistory.com/569 [어제 오늘 내일:티스토리]
 ```java
 import java.util.ArrayList;
 import java.util.Arrays;
