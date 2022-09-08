@@ -18,7 +18,7 @@ public class InsertionSort {
         System.out.println();
         System.out.print("=========================================================================");
 
-        int sum = InsertionSort(arr);
+        int sum = insertionSort(arr);
 
         System.out.println();
         System.out.println("=========================================================================");
@@ -30,7 +30,7 @@ public class InsertionSort {
 
     }
 
-    public static int InsertionSort(int[] arr){
+    public static int insertionSort(int[] arr){
 
         /**
          * for(i=1;i<n;i++) {
