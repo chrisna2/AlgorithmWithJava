@@ -96,7 +96,4 @@ public class InsertionSort {
         
         return sum;
     }
-
-
-
 }
