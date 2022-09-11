@@ -27,10 +27,8 @@ git add --all
 git commit -m "커밋메세지"
 git push origin master
 
-# git 완전 초기화
-git rm -r --cached .
-
 # .gitignore 적용
+git rm -r --cached . 
 git add .
 git commit -m "Apply .gitignore"
 
