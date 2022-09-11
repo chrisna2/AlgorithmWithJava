@@ -10,6 +10,8 @@ public class HeapSortFromInternet {
         int arrMax = 10;
         int[] arr = new int[arrMax];
 
+        // 힙의 경우 배열의 보통 인덱스 0 에 값은 입력하지 않음 (편의상)
+        // 그러나 나는 무식하게 0에다 값을 넣고 배열하기 바람
         for(int i= 0; i < arrMax; i++){
             arr[i] = (int)((Math.random()*(500-1+1))+1);
         }
@@ -44,10 +46,10 @@ public class HeapSortFromInternet {
 
     static void heapSort(int[] arr) {
         int eNN = arr.length-1;
-        while(eNN > 1) {
-            swap(arr, 1, eNN);
+        while(eNN > 0) {//[Debug]루트부터
+            swap(arr, 0, eNN); //[Debug]루트부터
             eNN--;
-            pushDown(arr, 1, eNN);
+            pushDown(arr, 0, eNN);//[Debug]루트부터
         }
     }
 
@@ -57,7 +59,7 @@ public class HeapSortFromInternet {
         int eNN = arr.length - 1; // 마지막 노드
         int tNN = eNN/2 + 1; //1번째 리프노드 번호
 
-        while(tNN > 1) {
+        while(tNN > 0) {//[Debug]루트부터 
             tNN--; // 자식을 가지고 있는 마지막 노드부터 시작
             pushDown(arr, tNN, eNN);
         }
