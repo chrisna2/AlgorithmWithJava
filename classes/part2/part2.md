@@ -26,7 +26,9 @@
 > 4. O(*n*log n) : 로그 선형 시간 &rightarrow; 합병정렬 알고리즘
 > 5. O(n^2) : 2차 선형 시간 &rightarrow; 
 > 6. O(n^3) : 3차 선형 시간 &rightarrow; 
-> 7. O(2^n) : 지수 시간 &rightarrow;
+> 7. O(2^n) : 지수 시간 &rightarrow;  
+
+> ## ***O(1) < O(logn) < O(n) < O(nlogn) < O(n^2) < O(2^n) < O(n!)***
 
 ## 비재귀 알고리즘 효율성
 ```java

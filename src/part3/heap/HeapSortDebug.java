@@ -128,7 +128,7 @@ public class HeapSortDebug {
         int bh,x;
 
         bh = (arr.length - 1)/2 +1; // 부모 노드의 위치
-
+        
         while(bh > 0){
 
             //System.out.println("bh => "+bh);
