@@ -39,13 +39,15 @@ public class DepthFirstSearch{
 
         DFS(node[0]);
 
+        System.out.println("BFS 탐색 종료");
+
     }
 
 
     public static void DFS(Node v){
 
         // 정점 V에 대응되는 데이터를 출력한다.
-        System.out.print(v.info + " ");
+        System.out.print("["+v.info+"]");
 
         // 정점 v를 '방문함'으로 표시한다.
         v.visited = true;
@@ -53,12 +55,22 @@ public class DepthFirstSearch{
         // 정점 v에 인접한 정점들의 연결 목록을 끄집어 낸다.
         List<Node> neighbours = v.neighbours;
 
+        System.out.println("의 이웃 정점 -> "+neighbours.toString());
+
         // 정점 v에 인접한 방문하지 않은 모든 정점들에 대해 깊이 우선 탐색을 수행한다.
-        for(int i = 0; i < neighbours.size(); i++){
+        for(int i = 0; i < neighbours.size(); i++){            
             Node w = neighbours.get(i);
             if(w != null && !w.visited){
+                System.out.println("방문 대상 -> "+w.info);
                 DFS(w);
             }
+            else{
+                System.out.print("탐색 노드 -> "+w.info);
+                if(w.visited){
+                    System.out.println(" 이미 방문함");
+                }
+            }
         }
+        System.out.println("["+v.info+"]의 이전 분기로 돌아감");
     }
 }
