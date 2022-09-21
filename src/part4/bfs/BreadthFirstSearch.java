@@ -52,7 +52,6 @@ public class BreadthFirstSearch {
 
     }
 
-
     public void BFS(Node v){
 
         // v를 '방문함'으로 표시한다. 
@@ -93,25 +92,8 @@ public class BreadthFirstSearch {
                         System.out.println(" 이미 방문");
                     }
                 }
-
-
             }
-
-
-
-
-
-
-
-
-
         }
-
-
-
-
-
-
     }
 
 
