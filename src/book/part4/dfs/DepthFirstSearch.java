@@ -1,8 +1,8 @@
-package part4.dfs;
+package book.part4.dfs;
 
 import java.util.List;
 
-import part4.Node;
+import book.part4.Node;
 
 public class DepthFirstSearch{
 

@@ -1,9 +1,9 @@
-package part4.topological;
+package book.part4.topological;
 
 import java.util.List;
 import java.util.Stack;
 
-import part4.Node;
+import book.part4.Node;
 
 // 순환이 없는 방향 그래프에 위상 정렬을 수행한다.
 public class TopologicalSort {

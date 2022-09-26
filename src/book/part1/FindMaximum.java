@@ -1,4 +1,4 @@
-package part1;
+package book.part1;
 
 public class FindMaximum {
 

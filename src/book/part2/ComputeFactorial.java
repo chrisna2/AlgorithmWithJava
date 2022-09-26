@@ -1,4 +1,4 @@
-package part2;
+package book.part2;
 
 /**
  * 재귀 알고리즘을 통해 팩토리얼 구하기 

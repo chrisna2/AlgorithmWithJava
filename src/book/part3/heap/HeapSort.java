@@ -1,4 +1,4 @@
-package part3.heap;
+package book.part3.heap;
 
 /**
  * 책보고 그대로 따라 했는데 계속 무한 루핑이 돌음

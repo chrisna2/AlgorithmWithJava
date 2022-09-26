@@ -12,7 +12,7 @@ def quick_sort(a):
     # 종료조건 : 정렬한 리스트의 자료개수가 한걔면 리턴
     if n <= 1:
         return a
-
+ 
     # 기준값 설정 임의값 셋팅
     pivot = a[-1] 
 
