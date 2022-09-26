@@ -13,6 +13,8 @@ public class ReverseSpecificString {
         String str = kb.next();
 
         System.out.println(T.solution(str));
+
+        kb.close();
     }
 
     /**

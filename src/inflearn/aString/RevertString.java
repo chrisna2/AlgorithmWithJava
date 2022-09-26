@@ -26,6 +26,8 @@ public class RevertString {
 
         T.solution(strArray);
 
+        kb.close();
+
     }
 
     /**

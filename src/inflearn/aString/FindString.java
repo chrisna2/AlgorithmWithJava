@@ -15,6 +15,8 @@ public class FindString {
 
         System.out.print(T.solution(str, c));
 
+        kb.close();
+
     }
 
 

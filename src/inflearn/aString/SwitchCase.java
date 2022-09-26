@@ -15,6 +15,8 @@ public class SwitchCase {
         String str = kb.next();
 
         System.out.print(T.solution(str));
+
+        kb.close();
       }
 
       public String solution(String str){

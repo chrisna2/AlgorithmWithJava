@@ -11,8 +11,10 @@ public class FindLongWord {
 
         //입력받을 문장일 경우 : nextLine
         String str = kb.nextLine();
-
+        
         System.out.print(T.solution2(str));
+
+        kb.close();
     }
 
     private String solution(String str) {
