@@ -1,4 +1,4 @@
-package part3;
+package book.part3;
 
 public class InsertionSort {
     

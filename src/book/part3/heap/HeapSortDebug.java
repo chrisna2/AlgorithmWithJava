@@ -1,4 +1,4 @@
-package part3.heap;
+package book.part3.heap;
 
 public class HeapSortDebug {
     public static void main(String[] args) {

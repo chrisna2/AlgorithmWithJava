@@ -1,4 +1,4 @@
-package part3.merge;
+package book.part3.merge;
 
 import java.util.ArrayList;
 import java.util.List;

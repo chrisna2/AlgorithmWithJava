@@ -1,9 +1,9 @@
-package part4.bfs;
+package book.part4.bfs;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import part4.Node;
+import book.part4.Node;
 
 public class BreadthFirstSearch {
     

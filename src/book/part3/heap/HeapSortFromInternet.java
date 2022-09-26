@@ -1,4 +1,4 @@
-package part3.heap;
+package book.part3.heap;
 
 /**
  * HeapSortFromInternet

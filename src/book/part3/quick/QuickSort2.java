@@ -1,4 +1,4 @@
-package part3.quick;
+package book.part3.quick;
 
 import java.util.ArrayList;
 import java.util.List;

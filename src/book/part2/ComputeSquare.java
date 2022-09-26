@@ -1,4 +1,4 @@
-package part2;
+package book.part2;
 
 public class ComputeSquare{
 

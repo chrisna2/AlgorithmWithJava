@@ -1,8 +1,8 @@
-package part5;
+package book.part5;
 
 /**
  * 가독성있게 가장 간단하게 짠다고 빠른건 아니다.
- * 그런데 그게 업무에서도 그럴까 싶다.  * 
+ * 그런데 그게 업무에서도 그럴까 싶다. 
  */
 public class Station {
     
