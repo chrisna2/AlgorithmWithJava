@@ -1,6 +1,7 @@
 package inflearn.aString;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -20,7 +21,6 @@ teachermode e
 
 예시 출력 1
 1 0 1 2 1 0 1 2 2 1 0
-
 */
 public class ShortCharLength{
 
@@ -33,32 +33,66 @@ public class ShortCharLength{
         String str = kb.next();
         char c = kb.next().charAt(0);
 
-        System.out.print(T.solution(str, c));
+        T.mysolution(str, c);
 
         kb.close();
 
     }
 
-    private String solution(String str, char c) {
-
-        int idx = 0;
+    private void mysolution(String str, char c) {
         
-        ArrayList<Integer> arr = new ArrayList<>();
+        //두개의 배열 필요
+        //정방향, 역방향 조회
 
-        for(char x : str.toCharArray()){
+        Integer[] right = new Integer[str.length()];
+        Integer[] left = new Integer[str.length()];
 
-            if(x == c){
-                arr.add(idx);
+        char[] charArr = str.toCharArray();
+
+        int p = 1000; //작은 값을 비교 하기 위한 셋팅
+        // 정방향으로
+        for(int i = 0; i < charArr.length; i++){
+            if(charArr[i] == c){
+                p = 0;
+                right[i] = p;
             }
-            idx++;
+            else{
+                p++;
+                right[i] = p;
+            }
+        }
+        
+        //System.out.println(Arrays.asList(right).toString());
+
+        p = 1000;
+        // 역순으로
+        for(int i = charArr.length-1; i > -1; i--){
+            if(charArr[i] == c){
+                p = 0;
+                left[i] = p;
+            }
+            else{
+                p++;
+                left[i] = p;
+            }
         }
 
-        //System.out.println(arr.toString());
-   
+        //System.out.println(Arrays.asList(left).toString());
+        // 배열을 두개 만들어서 서로비교해서 작은 값을 보여준다.
+        for(int i = 0; i < charArr.length; i++){
 
-        return null;
+            if(right[i] < left[i]){
+                System.out.print(right[i]);
+            }
+            else if(right[i] > left[i]){
+                System.out.print(left[i]);
+            }
+            //같으면 
+            else{
+                System.out.print(left[i]);//아무거나 상관없음
+            }
+
+            System.out.print(" ");
+        }
     }
-
-    
-
 }
