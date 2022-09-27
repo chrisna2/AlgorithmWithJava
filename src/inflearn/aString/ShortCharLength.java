@@ -33,7 +33,7 @@ public class ShortCharLength{
         String str = kb.next();
         char c = kb.next().charAt(0);
 
-        T.mysolution(str, c);
+        T.solution(str, c);
 
         kb.close();
 
@@ -95,4 +95,51 @@ public class ShortCharLength{
             System.out.print(" ");
         }
     }
+
+    /**
+     * 배열 한개로 처리
+     * @param str
+     * @param c
+     */
+    private void solution(String str, char c) {
+        
+   
+        //정방향, 역방향 조회
+        Integer[] idxarry = new Integer[str.length()];
+
+        char[] charArr = str.toCharArray();
+
+        int p = 1000; //작은 값을 비교 하기 위한 셋팅
+        // 정방향으로
+        for(int i = 0; i < charArr.length; i++){
+            if(charArr[i] == c){
+                p = 0;
+                idxarry[i] = p;
+            }
+            else{
+                p++;
+                idxarry[i] = p;
+            }
+        }
+        
+        //System.out.println(Arrays.asList(right).toString());
+
+        p = 1000; //초기화
+        // 역순으로
+        for(int i = charArr.length-1; i > -1; i--){
+            if(charArr[i] == c){
+                p = 0;
+                System.out.print(idxarry[i]);
+            }
+            else{
+                p++;
+                //JAVA : Math.min 사용하여 적용 작은 값을 찾아서 바꿔줌
+                idxarry[i] = Math.min(idxarry[i], p);
+                System.out.print(idxarry[i]);
+            }
+            System.out.print(" ");
+        }
+
+    }
+
 }
