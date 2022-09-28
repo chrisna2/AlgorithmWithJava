@@ -19,11 +19,11 @@ import java.util.Scanner;
 
 
 예시 입력 1 
-
 it is time to study
-예시 출력 1
 
+예시 출력 1
 study
+
  */
 public class FindLongWord {
 
