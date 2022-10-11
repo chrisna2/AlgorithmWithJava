@@ -57,8 +57,7 @@ public class Student {
                 result++;
             }
         }
-
+        
         System.out.println(result);
-
     }
 }
