@@ -1,2 +1,4 @@
 # ignore all .pdf files in the doc/ directory
 classes/**/*.class
+/.classpath
+/.project
