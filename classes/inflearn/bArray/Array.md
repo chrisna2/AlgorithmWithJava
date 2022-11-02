@@ -6,26 +6,33 @@
     - POINT : for문선언 하기 전에 기준 값을 셋팅해 둔다.
  
 2. 보이는 학생 - ***Student.java***
-    - 문제 내용 : 
-    - POINT : 
+    - 문제 내용 : 선생님이 N명의 학생을 일렬로 세웠습니다. 일렬로 서 있는 학생의 키가 앞에서부터 순서대로 주어질 때,맨 앞에 서 있는 선생님이 볼 수 있는 학생의 수를 구하는 프로그램을 작성하세요.
+    - POINT : 결국 큰놈들만 보인다.
     ```java 
-
+		 private void solution(Integer[] array) {
+	
+	        int result = 0;
+	        int bigman = 0;
+	
+	        for(int a : array){
+	            if(bigman < a){
+	                bigman = a;
+	                result++;
+	            }
+	        }
+	        
+	        System.out.println(result);
+	    }
     ```
  
 3. 가위바위보 - ***RockScissorsPaper.java***
-    - 문제 내용 : 
-    - POINT : 
-    ```java 
+    - 문제 내용 : 두 사람의 각 회의 가위, 바위, 보 정보가 주어지면 각 회를 누가 이겼는지 출력하는 프로그램을 작성하세요. 
+    - POINT : 비기거나, A가 이기거나, 그 나머지는 B가 이긴다. -> 조건 5개 -> 1 ~ 5댑스
 
-    ```
- 
 4. 피보나치 수열 - ***Fibonacci.java***
-    - 문제 내용 : 
-    - POINT : 
-    ```java 
+    - 문제 내용 : N 개의 피보나치 수열을 구하세요
+    - POINT : 피보나치 수열을 1 1 로 시작한다. 필요한 변수는 3개
 
-    ```
- 
 5. 소수(에라토스테네스 체) - ***PrimeNumber.java***
     - 문제 내용 : 
     - POINT : 
