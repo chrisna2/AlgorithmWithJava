@@ -176,6 +176,7 @@ public class ParkingFeeCount {
     			carList.add(rawData[1]);
     		}
     	}
+    	
     	carList.sort(Comparator.naturalOrder());
     	int[] answer = new int[carList.size()];
     	int count = 0;
