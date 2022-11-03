@@ -31,13 +31,34 @@
 
 4. 피보나치 수열 - ***Fibonacci.java***
     - 문제 내용 : N 개의 피보나치 수열을 구하세요
-    - POINT : 피보나치 수열을 1 1 로 시작한다. 필요한 변수는 3개
+    - POINT : 피보나치 수열을 1, 1 로 시작한다. 필요한 변수는 3개
 
 5. 소수(에라토스테네스 체) - ***PrimeNumber.java***
-    - 문제 내용 : 
-    - POINT : 
-    ```java 
+    - 문제 내용 : 특정 자연수의 범위 안에 소수의 갯수를 구하라
+    - POINT : 에라토스테의 채 -> 처음 체크에 걸리지 않은 1보다 큰 숫자는 소수이다. 
+    			 체크에 걸린 수의 배수는 다음 배열에서 모두 체크한다. 
+    			 체크된 수는 바로 넘겨 버리고 체크되지 않은 수로 바로 간다. 
+    			 반복 한다. (아무 생각 없이 2중 for문을 돌리면 실행되지 않는다.)
 
+    ```java 
+    	boolean[] eratosFilter = new boolean[maxSize+1];
+    	//java는 0부터 시작하니까 마지막 인덱스는 maxSize - 1임
+    	
+    	//System.out.println(Arrays.toString(eratosFilter));
+    	for(int i = 2; i<= maxSize; i++) {
+    		if(eratosFilter[i] == false) {
+    			eratosFilter[i] = true;
+    			for(int j = 2; i*j <= maxSize; j++) {
+    				eratosFilter[i*j] = true;
+    			}
+    			//System.out.println(i+" is prime number");
+    			count++;
+    		}
+    		else {
+    			//다음 처리
+    			continue;
+    		}
+    	}
     ```
  
 6. 뒤집은 소수 - ***ReversePrimeNumber.java***
